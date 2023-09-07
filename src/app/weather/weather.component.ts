@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Weather } from '../weather';
 import { WEATHER } from '../mock-weather';
 import { WeatherService } from '../weather.service';
@@ -8,17 +8,23 @@ import { WeatherService } from '../weather.service';
   templateUrl: './weather.component.html',
   styleUrls: ['./weather.component.css']
 })
-export class WeatherComponent {
+export class WeatherComponent implements OnInit {
   weather = WEATHER;
+  selectedWeather?: Weather;
+  visible: boolean = true;
 
   constructor(private weatherService: WeatherService) {}
 
-  selectedWeather?: Weather;
+  ngOnInit(): void {
+    this.selectedWeather = this.weatherService.getSelectedWeather();
+    if (this.selectedWeather) {
+      this.visible = false; // Hide the buttons if a day is already selected.
+    }
+  }
+
   onSelect(weather: Weather): void {
     this.weatherService.setSelectedWeather(weather);
     this.selectedWeather = weather;
-    this.visible = !this.visible
+    this.visible = false; // Hide the buttons
   }
-  //hiding info box
-  visible: boolean = true;
 }

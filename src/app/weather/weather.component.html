@@ -1,15 +1,14 @@
-<h2>The weather today was..</h2>
+<h2>Choose the weather</h2>
 <ng-container *ngIf="visible">
   <ul class="weather">
-    <li *ngFor="let weather of weather">
-      <button [class.selected]="weather === selectedWeather" type="button" (click)="onSelect(weather)">
-        <span class="badge">{{weather.id}}</span>
-        <span class="name">{{weather.name}}</span>
+    <li *ngFor="let weatherItem of weather">
+      <button [class.selected]="weatherItem === selectedWeather" type="button" (click)="onSelect(weatherItem)">
+        <span class="badge">{{weatherItem.id}}</span>
+        <span class="name">{{weatherItem.name}}</span>
       </button>
     </li>
   </ul>
 </ng-container>	
-
-<div *ngIf="selectedWeather">
-  <p>{{selectedWeather.name}}</p>
+<div *ngIf="selectedWeather"> <!-- Only show when selectedWeather is set and visible is false -->
+  <p>Selected weather: {{selectedWeather.name}}</p>
 </div>
