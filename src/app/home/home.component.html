@@ -1,0 +1,14 @@
+<h2>Choose how your day was</h2>
+<ng-container *ngIf="visible">
+  <ul class="days">
+    <li *ngFor="let day of days">
+      <button [class.selected]="day === selectedDay" type="button" (click)="onSelect(day)">
+        <span class="badge">{{day.id}}</span>
+        <span class="name">{{day.name}}</span>
+      </button>
+    </li>
+  </ul>
+</ng-container>	
+<div *ngIf="selectedDay">
+  <p>{{selectedDay.name}}</p>
+</div>

@@ -1,0 +1,77 @@
+/* Center the ul and li elements on the screen */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Style for the h2 heading */
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000; /* Black text color */
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+p{
+    font-size: 24px;
+    color: #000; /* Black text color */
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Style for the list */
+ul.weather {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Adjust the gap between items */
+    text-align: center;
+}
+
+/* Style for list items */
+ul.weather li {
+    margin-bottom: 10px;
+    flex-basis: calc(25% - 100px); /* Set the width for 4 items per row with gap */
+    max-width: calc(25% - 0px); /* Set the max-width for responsiveness */
+}
+
+/* Style for the button */
+ul.weather li button {
+    background-color: #089999; /* Green color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+/* Hover effect for the button */
+ul.weather li button:hover {
+    background-color: #127777; /* Darker green color on hover */
+}
+
+/* Style for the badge */
+ul.weather li .badge {
+    background-color: #E91E63; /* Pink color */
+    color: #fff;
+    border-radius: 50%;
+    padding: 5px 10px;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+/* Style for the name */
+ul.weather li .name {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+}

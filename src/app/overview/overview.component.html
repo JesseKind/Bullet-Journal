@@ -1,0 +1,10 @@
+<h2>Overview</h2>
+<div *ngIf="selectedDay">
+  <p>{{selectedDay.name}}</p>
+</div>
+<div *ngIf="selectedWeather">
+  <p>It was {{selectedWeather.name | lowercase}} today</p>
+</div>
+<div *ngIf="!selectedDay && !selectedWeather">
+  <p>You haven't filled anything in for today.</p>
+</div>

@@ -1,0 +1,15 @@
+<h2>The weather today was..</h2>
+<ng-container *ngIf="visible">
+  <ul class="weather">
+    <li *ngFor="let weather of weather">
+      <button [class.selected]="weather === selectedWeather" type="button" (click)="onSelect(weather)">
+        <span class="badge">{{weather.id}}</span>
+        <span class="name">{{weather.name}}</span>
+      </button>
+    </li>
+  </ul>
+</ng-container>	
+
+<div *ngIf="selectedWeather">
+  <p>{{selectedWeather.name}}</p>
+</div>
