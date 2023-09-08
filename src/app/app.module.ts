@@ -5,6 +5,9 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { WeatherComponent } from './weather/weather.component';
 import { OverviewComponent } from './overview/overview.component';
+import { SteptrackerComponent } from './steptracker/steptracker.component';
+import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
+import { NgChartsModule } from 'ng2-charts';
 
 
 @NgModule({
@@ -12,11 +15,14 @@ import { OverviewComponent } from './overview/overview.component';
     AppComponent,
     HomeComponent,
     WeatherComponent,
-    OverviewComponent
+    OverviewComponent,
+    SteptrackerComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgChartsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

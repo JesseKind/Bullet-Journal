@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Day } from '../day';
-import { Weather } from '../weather';
 import { DayService } from '../day.service';
+import { Weather } from '../weather';
 import { WeatherService } from '../weather.service';
 
 @Component({
