@@ -2,6 +2,8 @@ import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { Step } from '../step';
 import { STEPS } from '../mock-steps';
 import { ChartConfiguration } from 'chart.js';
+import { NewStepAddedService } from '../new-step-added.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-steptracker',
@@ -11,6 +13,7 @@ import { ChartConfiguration } from 'chart.js';
 export class SteptrackerComponent implements OnInit {
   steps = STEPS;
   title = 'ng2-charts-demo';
+  isSteptrackerPage = true;
 
   public barChartLegend = true;
   public barChartPlugins = [];
@@ -34,8 +37,14 @@ export class SteptrackerComponent implements OnInit {
   };
 
   newStepName: string = ''; // Variable to store the new step name
+  newStepAdded: boolean = false;
 
-  constructor(private changeDetectorRef: ChangeDetectorRef) {}
+
+  constructor(
+    private changeDetectorRef: ChangeDetectorRef,
+    public newStepAddedService: NewStepAddedService,
+    public router: Router 
+    ) {}
 
   ngOnInit() {
     // Initialize the chart data with data from mock-steps during component initialization.
@@ -58,6 +67,8 @@ export class SteptrackerComponent implements OnInit {
   
       // Clear the input field
       this.newStepName = '';
+
+      this.newStepAddedService.newStepAdded = true;
   
       // Trigger change detection to update the chart
       this.changeDetectorRef.detectChanges();

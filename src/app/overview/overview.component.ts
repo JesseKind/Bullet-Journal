@@ -4,7 +4,6 @@ import { DayService } from '../day.service';
 import { Weather } from '../weather';
 import { WeatherService } from '../weather.service';
 
-
 @Component({
   selector: 'app-overview',
   templateUrl: './overview.component.html',
