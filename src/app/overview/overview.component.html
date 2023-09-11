@@ -3,7 +3,7 @@
   <p>{{selectedDay.name}}</p>
 </div>
 <div *ngIf="selectedWeather">
-  <p>It was {{selectedWeather.name | lowercase}} today</p>
+  <p>It was {{selectedWeather.name}} today</p>
 </div>
 <div *ngIf="!selectedDay && !selectedWeather">
   <p>You haven't filled anything in for today.</p>

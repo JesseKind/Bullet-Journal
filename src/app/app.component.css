@@ -1,8 +1,8 @@
 /* CSS for the heading */
 .heading {
-    text-transform: uppercase;
-    position: relative;
-    background: #fff
+  text-transform: uppercase;
+  position: relative;
+  background: #fff
 }
 
 .heading h1 {
@@ -47,6 +47,7 @@ nav{
 nav a {
   transition: .3s;
   width: fit-content;
+  text-transform: uppercase;
  }
 
 nav a:hover{

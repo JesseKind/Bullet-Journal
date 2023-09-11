@@ -1,10 +1,12 @@
 <div class="heading">
     <h1><a routerLink="/">{{title}}</a></h1>
-    <nav>
-        <a routerLink="/">Home</a>
-        <a routerLink="/weather">Weather</a>
-        <a routerLink="/steptracker">Steptracker</a>
-        <a routerLink="/overview">Overview</a>
-    </nav>
 </div>
-<router-outlet></router-outlet>
+<nav>
+    <a routerLink="/">Home</a>
+    <a routerLink="/weather">Weather</a>
+    <a routerLink="/steptracker">Steptracker</a>
+    <a routerLink="/overview">Overview</a>
+</nav>
+<div class="content-wrapper">
+    <router-outlet></router-outlet>
+</div>

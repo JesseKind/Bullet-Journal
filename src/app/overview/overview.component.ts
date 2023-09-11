@@ -4,6 +4,7 @@ import { DayService } from '../day.service';
 import { Weather } from '../weather';
 import { WeatherService } from '../weather.service';
 
+
 @Component({
   selector: 'app-overview',
   templateUrl: './overview.component.html',
@@ -12,7 +13,7 @@ import { WeatherService } from '../weather.service';
 export class OverviewComponent {
   constructor(
     private dayService: DayService,
-    private weatherService: WeatherService
+    private weatherService: WeatherService,
   ) {}
 
   get selectedDay(): Day | undefined {

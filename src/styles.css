@@ -1,7 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
-h1, h2, h3, h4, h5, h6, p, a{
+h2, h3, h4, h5, h6, p, a{
     color: #000;
     font-family: 'Open Sans', sans-serif;
+}
+
+h1 a{
+    font-family: 'Roboto', sans-serif;
 }
 
 a{

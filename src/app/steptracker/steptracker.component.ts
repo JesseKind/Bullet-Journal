@@ -63,7 +63,6 @@ export class SteptrackerComponent implements OnInit {
       this.changeDetectorRef.detectChanges();
     }
   }
-  
 
   // Update the bar chart data
   updateBarChartData() {
