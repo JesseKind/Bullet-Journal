@@ -1,5 +1,5 @@
 /* Center the ul and li elements on the screen */
-body {
+body{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,7 +8,7 @@ body {
 }
 
 /* Style for the h2 heading */
-h2 {
+h2{
     font-size: 24px;
     font-weight: bold;
     color: #000; /* Black text color */
@@ -17,8 +17,19 @@ h2 {
     justify-content: center;
 }
 
+label{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.875em;
+}
+
+.steptracker-text-added{
+    display: flex;
+    justify-content: center;
+}
+
 .steptracker-wrapper{
     display: flex;
     justify-content: center;
-    margin-top: 8rem;
+    margin-top: 6rem;
 }
+

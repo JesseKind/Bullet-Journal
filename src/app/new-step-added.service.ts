@@ -5,4 +5,5 @@ import { Injectable } from '@angular/core';
 })
 export class NewStepAddedService {
   newStepAdded: boolean = false;
+  hideAddStepButton: boolean = true; // Add this property to manage button visibility
 }

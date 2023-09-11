@@ -13,7 +13,8 @@ import { Router } from '@angular/router';
 export class SteptrackerComponent implements OnInit {
   steps = STEPS;
   title = 'ng2-charts-demo';
-  isSteptrackerPage = true;
+  showAddStepButton = true;
+
 
   public barChartLegend = true;
   public barChartPlugins = [];
@@ -68,8 +69,9 @@ export class SteptrackerComponent implements OnInit {
       // Clear the input field
       this.newStepName = '';
 
-      this.newStepAddedService.newStepAdded = true;
-  
+      this.showAddStepButton = false;
+      this.newStepAddedService.hideAddStepButton = false;
+
       // Trigger change detection to update the chart
       this.changeDetectorRef.detectChanges();
     }
