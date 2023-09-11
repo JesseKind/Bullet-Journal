@@ -1,0 +1,79 @@
+/* Center the ul and li elements on the screen */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Style for the h2 heading */
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000; /* Black text color */
+    margin-bottom: 20px;
+    text-align: center; /* Center the text */
+}
+
+/* Style for the list */
+ul.books {
+    list-style-type: none;
+    padding: 0;
+    text-align: center; /* Center the list items */
+}
+
+/* Style for list items */
+ul.books li {
+    margin-bottom: 10px;
+}
+
+/* Style for the button */
+ul.books li button {
+    background-color: #089999; /* Green color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Hover effect for the button */
+ul.books li button:hover {
+    background-color: #127777; /* Darker green color on hover */
+}
+
+/* Style for the badge */
+ul.books li .badge {
+    background-color: #E91E63; /* Pink color */
+    color: #fff;
+    border-radius: 50%;
+    padding: 5px 10px;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+/* Style for the name */
+ul.books li .name {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+}
+
+.selected-book{
+    text-align: center;
+}
+
+.new-book-container{    
+    text-align: center;
+}
+
+label{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.875em;
+}
+
+button{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.75em;
+}

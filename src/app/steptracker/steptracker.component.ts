@@ -14,6 +14,7 @@ export class SteptrackerComponent implements OnInit {
   steps = STEPS;
   title = 'ng2-charts-demo';
   showAddStepButton = true;
+  newStepName: string = ''; // Variable to store the new step name
 
   public barChartLegend = true;
   public barChartPlugins = [];
@@ -35,8 +36,6 @@ export class SteptrackerComponent implements OnInit {
   public barChartOptions: ChartConfiguration<'bar'>['options'] = {
     responsive: false,
   };
-
-  newStepName: string = ''; // Variable to store the new step name
 
   constructor(
     private changeDetectorRef: ChangeDetectorRef,
