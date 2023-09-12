@@ -41,6 +41,7 @@ nav{
   flex-direction: column;
   padding-left: 1em;
   transition:  0.3s ease;
+  height: 55px;
 }
 
 nav a {

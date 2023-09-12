@@ -1,21 +1,29 @@
 <h2>Overview</h2>
-<!-- Home page -->
-<div *ngIf="selectedDay">
-  <p>{{selectedDay.name}}</p>
+<div class="swiper mySwiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <div *ngIf="selectedDay">
+        <p>{{selectedDay.name}}</p>
+      </div>
+      <div *ngIf="!selectedDay">
+        <p>You haven't filled in how your day was</p>
+      </div>      
+    </div>
+    <div class="swiper-slide">
+      <div *ngIf="selectedWeather">
+        <p>It was {{selectedWeather.name}} today</p>
+      </div>
+      <div *ngIf="!selectedWeather">
+        <p>You haven't filled in what the weather was</p>
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <app-steptracker></app-steptracker>
+    </div>
+    <div class="swiper-slide">
+      <app-book></app-book>
+    </div>
+  </div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
 </div>
-
-<!-- Weather page -->
-<div *ngIf="selectedWeather">
-  <p>It was {{selectedWeather.name}} today</p>
-</div>
-
-<!-- Empty state -->
-<div *ngIf="!selectedDay && !selectedWeather">
-  <p>You haven't filled anything in for today.</p>
-</div>
-
-<!-- Steptracker page -->
-<app-steptracker></app-steptracker>
-
-<!-- Overview page -->
-<app-book></app-book>

@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'weather', component: WeatherComponent },
   { path: 'steptracker', component: SteptrackerComponent },
   { path: 'books', component: BookComponent},
-  { path: 'overview', component: OverviewComponent }
+  { path: 'overview', component: OverviewComponent },
 ];
 
 @NgModule({

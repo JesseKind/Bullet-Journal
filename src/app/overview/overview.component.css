@@ -1,3 +1,8 @@
+html, body {
+    position: relative;
+    height: 100%;
+}
+
 /* Style for the h2 heading */
 h2 {
     font-size: 24px;
@@ -14,4 +19,31 @@ p{
     margin-bottom: 20px;
     display: flex;
     justify-content: center;
+}
+
+/* Style for the swiper */
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.swiper {
+    margin-left: auto;
+    margin-right: auto;
 }
