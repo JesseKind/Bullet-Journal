@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Book } from '../book';
 import { BOOKS } from '../mock-books';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-book',
@@ -10,7 +11,10 @@ import { BOOKS } from '../mock-books';
 export class BookComponent {
   books = BOOKS;
   newBookName: string = '';
+  newBookDescription: string = '';
   selectedBook?: Book;
+
+  constructor(private router: Router) {}
 
   onSelect(book: Book): void {
     this.selectedBook = book;
@@ -21,7 +25,7 @@ export class BookComponent {
       const newBook: Book = {
         id: this.books.length + 1, // Generate a new ID
         name: this.newBookName,
-        description: '', // You can add a description if needed
+        description: this.newBookDescription,
       };
   
       // Push the new book to the books array
@@ -29,9 +33,12 @@ export class BookComponent {
   
       // Clear the input field
       this.newBookName = '';
-  
-      // Optionally, select the newly added book
-      this.selectedBook = newBook;
+      this.newBookDescription = '';
     }
-  } 
+  }
+
+  isNotOverviewPage(): boolean {
+    // Check if the current route is not the 'Overview' page
+    return this.router.url !== '/overview';
+  }
 }

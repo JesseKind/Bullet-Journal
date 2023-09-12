@@ -12,16 +12,26 @@
   <h2>{{ selectedBook.name | uppercase }} Details</h2>
   <div>
     <label for="book-name">Book name: </label>
-    <input id="book-name" [(ngModel)]="selectedBook.name" placeholder="name" />
+    <input id="book-name" [(ngModel)]="selectedBook.name" placeholder="name"/>
   </div>
-  <div class="description">{{ selectedBook.description }}</div>
+  <p>{{ selectedBook.description }}</p>
 </div>
 
-<div class="new-book-container">
-  <h2>Add a new book</h2>
-  <div>
-    <label for="new-book-name">Book name: </label>
-    <input id="new-book-name" [(ngModel)]="newBookName" placeholder="Enter book name" />
-    <button (click)="addBook()">Add Book</button>
+<div *ngIf="isNotOverviewPage()">
+  <div class="new-book-container">
+    <h2>Add a new book</h2>
+    <div>
+      <div>
+        <label for="new-book-name">Book name: </label>
+        <input id="new-book-name" [(ngModel)]="newBookName" placeholder="Enter book name"/>
+      </div>
+      <div>
+        <label for="new-book-description">Book description: </label>
+        <input id="new-book-description" [(ngModel)]="newBookDescription" placeholder="Enter book description"/>
+      </div>
+      <div class="add-book">
+        <button (click)="addBook()">Add Book</button>
+      </div>
+    </div>
   </div>
 </div>

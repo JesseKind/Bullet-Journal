@@ -1,11 +1,21 @@
 <h2>Overview</h2>
+<!-- Home page -->
 <div *ngIf="selectedDay">
   <p>{{selectedDay.name}}</p>
 </div>
+
+<!-- Weather page -->
 <div *ngIf="selectedWeather">
   <p>It was {{selectedWeather.name}} today</p>
 </div>
+
+<!-- Empty state -->
 <div *ngIf="!selectedDay && !selectedWeather">
   <p>You haven't filled anything in for today.</p>
 </div>
+
+<!-- Steptracker page -->
 <app-steptracker></app-steptracker>
+
+<!-- Overview page -->
+<app-book></app-book>

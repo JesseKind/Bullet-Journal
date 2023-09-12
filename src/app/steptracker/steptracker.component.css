@@ -19,7 +19,7 @@ h2{
 
 label{
     font-family: 'Open Sans', sans-serif;
-    font-size: 0.875em;
+    font-size: 1em;
 }
 
 .steptracker-text-added{
@@ -30,6 +30,7 @@ label{
 .steptracker-wrapper{
     display: flex;
     justify-content: center;
-    margin-top: 6rem;
+    margin-top: 6em;
+    margin-bottom: 4em;
 }
 

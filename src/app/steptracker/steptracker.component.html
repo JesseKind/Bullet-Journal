@@ -5,8 +5,8 @@
     <input id="name" [(ngModel)]="newStepName" placeholder="" (input)="handleInputChange($event)">
     <button (click)="addStep()">Add Step</button>
   </div>
-  <div class="steptracker-text-added" *ngIf="!newStepAddedService.hideAddStepButton"><p>Steps have been added to the chart!</p></div>
 </div>
+<div class="steptracker-text-added" *ngIf="!newStepAddedService.hideAddStepButton"><p>Steps have been added to the chart!</p></div>
 
 <div class="steptracker-wrapper">
   <canvas style="width: 800px;" baseChart
