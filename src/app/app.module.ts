@@ -9,6 +9,7 @@ import { BookComponent } from './book/book.component';
 import { OverviewComponent } from './overview/overview.component';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { NgChartsModule } from 'ng2-charts';
+import { QuoteComponent } from './quote/quote.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { NgChartsModule } from 'ng2-charts';
     SteptrackerComponent,
     BookComponent,
     OverviewComponent,
+    QuoteComponent,
   ],
   imports: [
     BrowserModule,

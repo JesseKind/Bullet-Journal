@@ -1,0 +1,18 @@
+/* Center the ul and li elements on the screen */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Style for the h2 heading */
+h2 {
+    font-size: 26px;
+    font-weight: 400;
+    font-style: italic;
+    color: #000; /* Black text color */
+    margin-bottom: 20px;
+    text-align: center; /* Center the text */
+}
