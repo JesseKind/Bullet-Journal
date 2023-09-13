@@ -6,10 +6,14 @@ import { HomeComponent } from './home/home.component';
 import { SteptrackerComponent } from './steptracker/steptracker.component';
 import { WeatherComponent } from './weather/weather.component';
 import { BookComponent } from './book/book.component';
+import { QuoteComponent } from './quote/quote.component';
+import { BirthdayComponent } from './birthday/birthday.component';
+import { FullCalendarModule } from '@fullcalendar/angular';
 import { OverviewComponent } from './overview/overview.component';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { NgChartsModule } from 'ng2-charts';
-import { QuoteComponent } from './quote/quote.component';
+
+
 
 @NgModule({
   declarations: [
@@ -18,14 +22,16 @@ import { QuoteComponent } from './quote/quote.component';
     WeatherComponent,
     SteptrackerComponent,
     BookComponent,
-    OverviewComponent,
     QuoteComponent,
+    BirthdayComponent,
+    OverviewComponent, 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgChartsModule,
     FormsModule,
+    FullCalendarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
