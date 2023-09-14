@@ -73,11 +73,6 @@ label{
     font-size: 1em;
 }
 
-button{
-    font-family: 'Open Sans', sans-serif;
-    font-size: 0.75em;
-}
-
 /* Style for the "Add Book" button */
 .add-book button {
     background-color: #089999; /* Green color */

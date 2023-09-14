@@ -38,16 +38,19 @@ input[type="date"] {
 
 /* Style for the button element */
 button {
-    background-color: #007BFF; /* Blue background color */
-    color: #fff; /* White text color */
-    padding: 10px 20px;
-    margin-top: 15px;
+    background-color: #089999; /* Green color */
+    color: #fff;
     border: none;
     border-radius: 5px;
+    padding: 10px 20px;
+    margin-top: 12px;
     cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
 }
 
 /* Hover effect for the button */
 button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color: #127777; /* Darker green color on hover */
 }

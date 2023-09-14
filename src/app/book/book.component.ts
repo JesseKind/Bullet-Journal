@@ -36,9 +36,4 @@ export class BookComponent {
       this.newBookDescription = '';
     }
   }
-
-  isNotOverviewPage(): boolean {
-    // Check if the current route is not the 'Overview' page
-    return this.router.url !== '/overview';
-  }
 }
