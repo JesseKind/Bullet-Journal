@@ -1,11 +1,9 @@
 <h2>How many steps have you taken today?</h2>
-<div [hidden]="!newStepAddedService.hideAddStepButton" *ngIf="router.url == '/steptracker'">
-  <div style="display: flex; justify-content: center">
+  <div class="steptracker-input-wrapper" [hidden]="!newStepAddedService.hideAddStepButton" *ngIf="router.url == '/steptracker'">
     <label for="name">Steps taken:</label>
     <input id="name" [(ngModel)]="newStepName" placeholder="" (input)="handleInputChange($event)">
     <button (click)="addStep()">Add Step</button>
   </div>
-</div>
 <div class="steptracker-text-added" *ngIf="!newStepAddedService.hideAddStepButton"><p>Steps have been added to the chart!</p></div>
 
 <div class="steptracker-wrapper">

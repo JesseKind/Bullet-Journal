@@ -12,7 +12,8 @@ import { FullCalendarModule } from '@fullcalendar/angular';
 import { OverviewComponent } from './overview/overview.component';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { NgChartsModule } from 'ng2-charts';
-
+import { StoreModule } from '@ngrx/store';
+import { reducer as eventReducer } from './events.reducer'; // Import your event reducer
 
 
 @NgModule({
@@ -32,6 +33,11 @@ import { NgChartsModule } from 'ng2-charts';
     NgChartsModule,
     FormsModule,
     FullCalendarModule,
+    StoreModule.forRoot({
+      events: eventReducer, // 'events' should match your feature name
+      // Add other reducers as need
+    
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],

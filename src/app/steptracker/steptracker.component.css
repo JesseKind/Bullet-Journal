@@ -22,6 +22,11 @@ label{
     font-size: 1em;
 }
 
+.steptracker-input-wrapper{
+    display: flex;
+    justify-content: center;
+}
+
 .steptracker-text-added{
     display: flex;
     justify-content: center;
