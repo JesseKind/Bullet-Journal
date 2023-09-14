@@ -14,7 +14,7 @@ export class BookComponent {
   newBookDescription: string = '';
   selectedBook?: Book;
 
-  constructor(private router: Router) {}
+  constructor(public router: Router) {}
 
   onSelect(book: Book): void {
     this.selectedBook = book;

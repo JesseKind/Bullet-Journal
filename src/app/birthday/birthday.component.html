@@ -1,7 +1,7 @@
 <h2>Birthday Calendar</h2>
 <div class="birthday-container">
   <full-calendar [options]="calendarOptions" #fullcalendar></full-calendar>
-  <div class="event-input">
+  <div class="event-input" *ngIf="router.url == '/birthday'">
     <input type="text" placeholder="Birthday name" [(ngModel)]="birthdayName">
     <input type="date" [(ngModel)]="birthdayDate">
     <button (click)="addBirthday()">Add Birthday</button>

@@ -4,6 +4,7 @@ import { CalendarOptions, EventClickArg } from '@fullcalendar/core';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import { Store } from '@ngrx/store';
 import { deleteEvent } from '../actions';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -25,7 +26,9 @@ export class BirthdayComponent implements OnInit {
   birthdayName: string = ''; // Variable to hold the birthday name
   birthdayDate: string = ''; // Variable to hold the birthday date
 
-  constructor(private store: Store) {} // Inject the Store service
+  constructor(
+    private store: Store,
+    public router: Router ) {} // Inject the Store service
 
   ngOnInit() {
     this.calendarOptions.events = [

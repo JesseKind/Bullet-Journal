@@ -11,13 +11,13 @@
 <div class="selected-book" *ngIf="selectedBook">
   <h2>{{ selectedBook.name | uppercase }} Details</h2>
   <div>
-    <label for="book-name">Book name: </label>
+    <label for="book-name">Books name: </label>
     <input id="book-name" [(ngModel)]="selectedBook.name" placeholder="name"/>
   </div>
   <p>{{ selectedBook.description }}</p>
 </div>
 
-<div *ngIf="isNotOverviewPage()">
+<div *ngIf="router.url == '/books'">
   <div class="new-book-container">
     <h2>Add a new book</h2>
     <div>
