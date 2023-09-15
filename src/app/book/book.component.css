@@ -16,6 +16,20 @@ h2 {
     text-align: center; /* Center the text */
 }
 
+.books-container{
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.books-wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 36%;
+    margin: auto 0;
+}
+
 /* Style for the list */
 ul.books {
     list-style-type: none;
@@ -25,7 +39,10 @@ ul.books {
 
 /* Style for list items */
 ul.books li {
+    display: flex;
+    justify-content: space-between;
     margin-bottom: 10px;
+    text-align: left;
 }
 
 /* Style for the button */
@@ -42,16 +59,6 @@ ul.books li button {
 /* Hover effect for the button */
 ul.books li button:hover {
     background-color: #127777; /* Darker green color on hover */
-}
-
-/* Style for the badge */
-ul.books li .badge {
-    background-color: #E91E63; /* Pink color */
-    color: #fff;
-    border-radius: 50%;
-    padding: 5px 10px;
-    margin-right: 10px;
-    font-weight: bold;
 }
 
 /* Style for the name */

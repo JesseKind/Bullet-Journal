@@ -1,13 +1,63 @@
-<h2>List of books</h2>
-<ul class="books">
-  <li *ngFor="let book of books">
-    <button [class.selected]="book === selectedBook" type="button" (click)="onSelect(book)">
-      <span class="badge">{{ book.id }}</span>
-      <span class="name">{{ book.name }}</span>
-    </button>
-  </li>
-</ul>
-
+<div class="books-container">
+  <div class="books-wrapper">
+    <ul class="books">
+      <h2>List of books</h2>
+      <li *ngFor="let book of books">
+        <button [class.selected]="book === selectedBook" type="button" (click)="onSelect(book)">
+          <span class="name">{{ book.name }}</span>
+        </button>
+        <button *ngIf="!book.isRead" (click)="markAsRead(book)">Mark as Read</button>
+      </li>
+    </ul>
+    
+    <div *ngIf="router.url == '/books'">
+      <div class="new-book-container">
+        <h2>Add a new book</h2>
+        <div>
+          <div>
+            <label for="new-book-name">Book name: </label>
+            <input id="new-book-name" [(ngModel)]="newBookName" placeholder="Enter book name"/>
+          </div>
+          <div>
+            <label for="new-book-description">Book description: </label>
+            <input id="new-book-description" [(ngModel)]="newBookDescription" placeholder="Enter book description"/>
+          </div>
+          <div class="add-book">
+            <button (click)="addBook()">Add Book</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="books-wrapper">
+    <ul class="books">
+      <h2>List of Read Books</h2>
+      <li *ngFor="let readBook of readBooks">
+        <button [class.selected]="readBook === selectedBook" type="button" (click)="onSelect(readBook)">
+          <span class="name">{{ readBook.name }}</span>
+        </button>
+        <button (click)="moveToBooks(readBook)">Move to Books</button>
+      </li>
+    </ul>
+    
+    <div class="new-book-container">
+      <h2>Add a new read book</h2>
+      <div>
+        <div>
+          <label for="new-read-book-name">Book name: </label>
+          <input id="new-read-book-name" [(ngModel)]="newReadBookName" placeholder="Enter book name"/>
+        </div>
+        <div>
+          <label for="new-read-book-description">Book description: </label>
+          <input id="new-read-book-description" [(ngModel)]="newReadBookDescription" placeholder="Enter book description"/>
+        </div>
+        <div class="add-book">
+          <button (click)="addReadBook()">Add Read Book</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="selected-book" *ngIf="selectedBook">
   <h2>{{ selectedBook.name | uppercase }} Details</h2>
   <div>
@@ -15,23 +65,4 @@
     <input id="book-name" [(ngModel)]="selectedBook.name" placeholder="name"/>
   </div>
   <p>{{ selectedBook.description }}</p>
-</div>
-
-<div *ngIf="router.url == '/books'">
-  <div class="new-book-container">
-    <h2>Add a new book</h2>
-    <div>
-      <div>
-        <label for="new-book-name">Book name: </label>
-        <input id="new-book-name" [(ngModel)]="newBookName" placeholder="Enter book name"/>
-      </div>
-      <div>
-        <label for="new-book-description">Book description: </label>
-        <input id="new-book-description" [(ngModel)]="newBookDescription" placeholder="Enter book description"/>
-      </div>
-      <div class="add-book">
-        <button (click)="addBook()">Add Book</button>
-      </div>
-    </div>
-  </div>
 </div>
