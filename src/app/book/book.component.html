@@ -7,7 +7,7 @@
         <button [class.selected]="book === selectedBook" type="button" (click)="onSelect(book)">
           <span class="name">{{ book.name }}</span>
         </button>
-        <button style="font-size: 16px;" *ngIf="!book.isRead" (click)="markAsRead(book)">Mark as Read</button>
+        <button style="font-size: 16px;" (click)="markAsRead(book)">Mark as Read</button>
       </li>
     </ul>
     
