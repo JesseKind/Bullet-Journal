@@ -1,10 +1,12 @@
 <h2>How many steps have you taken today?</h2>
-  <div class="steptracker-input-wrapper" [hidden]="!newStepAddedService.hideAddStepButton" *ngIf="router.url == '/steptracker'">
+<div class="steptracker-input-wrapper" *ngIf="stepVisibilityService.isButtonVisible()">
+  <div *ngIf="router.url == '/steptracker'">
     <label for="name">Steps taken:</label>
     <input id="name" [(ngModel)]="newStepName" placeholder="" (input)="handleInputChange($event)">
     <button (click)="addStep()">Add Step</button>
   </div>
-<div class="steptracker-text-added" *ngIf="!newStepAddedService.hideAddStepButton"><p>Steps have been added to the chart!</p></div>
+</div>
+<div class="steptracker-text-added" *ngIf="!stepVisibilityService.isButtonVisible()"><p>Steps have been added to the chart!</p></div>
 
 <div class="steptracker-wrapper">
   <canvas style="width: 800px;" baseChart

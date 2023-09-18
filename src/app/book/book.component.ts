@@ -62,7 +62,6 @@ export class BookComponent {
       this.newBookDescription = '';
     }
   }
-
   markAsRead(book: Book): void {
     book.isRead = true;
     this.readBooks.push(book);

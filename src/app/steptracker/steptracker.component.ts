@@ -4,6 +4,7 @@ import { STEPS } from '../mock-steps';
 import { ChartConfiguration } from 'chart.js';
 import { NewStepAddedService } from '../new-step-added.service';
 import { Router } from '@angular/router';
+import { StepVisibilityService } from '../shared.service'; // Import the shared service
 
 @Component({
   selector: 'app-steptracker',
@@ -13,7 +14,6 @@ import { Router } from '@angular/router';
 export class SteptrackerComponent implements OnInit {
   steps = STEPS;
   title = 'ng2-charts-demo';
-  showAddStepButton = true;
   newStepName: string = ''; // Variable to store the new step name
 
   public barChartLegend = true;
@@ -40,8 +40,9 @@ export class SteptrackerComponent implements OnInit {
   constructor(
     private changeDetectorRef: ChangeDetectorRef,
     public newStepAddedService: NewStepAddedService,
-    public router: Router 
-    ) {}
+    public router: Router,
+    public stepVisibilityService: StepVisibilityService // Make the service public
+  ) {}
 
   ngOnInit() {
     // Initialize the chart data with data from mock-steps during component initialization.
@@ -55,18 +56,18 @@ export class SteptrackerComponent implements OnInit {
         id: this.steps.length + 1, // Generate a new ID
         name: this.newStepName,
       };
-  
+
       // Push the new step to the steps array
       this.steps.push(newStep);
-  
+
       // Update the bar chart data
       this.updateBarChartData();
-  
+
       // Clear the input field
       this.newStepName = '';
 
-      this.showAddStepButton = false;
-      this.newStepAddedService.hideAddStepButton = false;
+      // Hide the input field and button after adding a step
+      this.stepVisibilityService.toggleVisibility(); // Toggle visibility using the service
 
       // Trigger change detection to update the chart
       this.changeDetectorRef.detectChanges();
@@ -79,7 +80,7 @@ export class SteptrackerComponent implements OnInit {
     const stepData = this.steps.map((step) => +step.name); // Convert step names to numbers
     this.barChartData.datasets[0].data = stepData;
   }
-  
+
   // Handle input changes and prevent non-numeric characters
   handleInputChange(event: Event) {
     const inputElement = event.target as HTMLInputElement;
